@@ -315,13 +315,17 @@
   .why-card h3 { font-size: 1.02rem; margin-bottom: 6px; color: var(--dark); }
   .why-card p { color: var(--text-muted); font-size: 0.85rem; }
 
-  /* FOOTER */
-  footer { background: var(--dark); color: #fff; padding: 48px 0 24px; }
-  .footer-inner { display: flex; flex-wrap: wrap; gap: 36px; justify-content: space-between; margin-bottom: 36px; }
-  .footer-col { flex: 1; min-width: 240px; }
-  .footer-col h4 { color: #fff; font-size: 1.25rem; margin-bottom: 14px; }
-  .footer-col p { color: #c2a98f; font-size: 0.88rem; line-height: 1.6; }
-  .footer-bottom { text-align: center; border-top: 1px solid #3a2a22; padding-top: 24px; color: #8a7565; font-size: 0.82rem; }
+  /* TESTIMONIAL GALLERY */
+  .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .testi-card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid var(--border); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+  .testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .testi-img-box { position: relative; width: 100%; height: 280px; overflow: hidden; background: #1c1210; }
+  .testi-img-box img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .testi-content { padding: 18px 20px; }
+  .testi-stars { color: #f59e0b; font-size: 0.9rem; margin-bottom: 8px; }
+  .testi-quote { font-size: 0.88rem; color: var(--text-main); font-style: italic; margin-bottom: 12px; line-height: 1.5; }
+  .testi-author { display: flex; align-items: center; justify-content: space-between; font-size: 0.82rem; font-weight: 700; color: var(--dark); border-top: 1px dashed var(--border); padding-top: 10px; }
+  .testi-verified { color: #16a34a; font-size: 0.78rem; font-weight: 700; display: flex; align-items: center; gap: 4px; }
 </style>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍟</text></svg>">
 <meta property="og:type" content="website">
@@ -344,6 +348,7 @@
 
     <nav class="nav-links">
       <a href="#produk">Varian &amp; Harga</a>
+      <a href="#testimoni">Testimoni</a>
       <a href="#kontak">Cara Order</a>
     </nav>
 
@@ -517,6 +522,88 @@
               <span class="service-unit">200 gram</span>
             </div>
             <button class="btn-select-service" onclick="addToCart('s3', 'Aparsi Salt - Jumbo (200gr)', 22000, 'pcs')">+ Tambah ke Keranjang</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONI PELANGGAN -->
+<section class="section" style="background: #fdf6ec;" id="testimoni">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title brand-font">❤️ Kata Pelanggan Setia Aparsi</h2>
+      <p class="section-desc">Lihat keseruan &amp; kelezatan keripik mbote Aparsi langsung dari foto asli pelanggan kami!</p>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-img-box">
+          <img loading="lazy" src="assets/testi-1.jpg" alt="Testimoni Aparsi Keripik">
+        </div>
+        <div class="testi-content">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testi-quote">"Renyah banget keripik mbotenya! Bumbu pedasnya pas di lidah, sekali coba langsung gak bisa berhenti ngemil."</p>
+          <div class="testi-author">
+            <span>Dimas Kurniawan</span>
+            <span class="testi-verified">✔ Pembeli Asli</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-img-box">
+          <img loading="lazy" src="assets/testi-2.jpg" alt="Testimoni Aparsi Keripik">
+        </div>
+        <div class="testi-content">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testi-quote">"Suka banget varian Asin-nya! Gurih alami tanpa pengawet. Cocok banget buat nemenin nugas &amp; santai."</p>
+          <div class="testi-author">
+            <span>Siti Rahma</span>
+            <span class="testi-verified">✔ Pembeli Asli</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-img-box">
+          <img loading="lazy" src="assets/testi-3.jpg" alt="Testimoni Aparsi Keripik">
+        </div>
+        <div class="testi-content">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testi-quote">"Beli yang jumbo 2 varian sekaligus. Kemasannya rapi, higienis, dan pengirimannya cepat banget!"</p>
+          <div class="testi-author">
+            <span>Bagus Pratama</span>
+            <span class="testi-verified">✔ Pembeli Asli</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-img-box">
+          <img loading="lazy" src="assets/testi-4.jpg" alt="Testimoni Aparsi Keripik">
+        </div>
+        <div class="testi-content">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testi-quote">"Cemilan wajib kalo nongkrong bareng temen-temen. Rasa pedas &amp; asinnya juara banget!"</p>
+          <div class="testi-author">
+            <span>Nadia &amp; Anita</span>
+            <span class="testi-verified">✔ Pembeli Asli</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-img-box">
+          <img loading="lazy" src="assets/testi-5.jpg" alt="Testimoni Aparsi Keripik">
+        </div>
+        <div class="testi-content">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testi-quote">"Kualitas keripik taro/mbote lokal kualitas super. Selalu langganan tiap minggu di Aparsi!"</p>
+          <div class="testi-author">
+            <span>Rina Kartika</span>
+            <span class="testi-verified">✔ Pembeli Asli</span>
           </div>
         </div>
       </div>
