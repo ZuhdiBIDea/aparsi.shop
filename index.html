@@ -9,20 +9,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --primary: #dc2626;
-    --primary-dark: #b91c1c;
-    --primary-light: #fee2e2;
-    --secondary: #f59e0b;
-    --secondary-dark: #d97706;
-    --secondary-light: #fef3c7;
-    --dark: #1c1210;
-    --text-main: #44352e;
-    --text-muted: #7a685e;
+    --primary: #d92323;         /* Aparsi Chili Red */
+    --primary-dark: #a81616;    /* Dark Chili Red */
+    --primary-light: #fee2e2;   /* Soft Chili Tint */
+    --secondary: #f59e0b;       /* Aparsi Mustard Gold */
+    --secondary-dark: #d97706;  /* Deep Gold */
+    --secondary-light: #fef3c7; /* Gold Tint */
+    --accent-green: #65a30d;    /* Aparsi Salt Pouch Lime Green */
+    --accent-green-dark: #4d7c0f;
+    --dark: #1f1412;            /* Rich Charcoal Brown */
+    --text-main: #3d2e27;       /* Rich Brown Text */
+    --text-muted: #78665c;      /* Muted Brown Text */
     --card-bg: #ffffff;
-    --bg-main: #fffaf3;
-    --border: #f0e2d0;
-    --shadow-sm: 0 4px 12px rgba(28, 18, 16, 0.07);
-    --shadow-md: 0 12px 30px rgba(28, 18, 16, 0.14);
+    --bg-main: #fffaf3;         /* Warm Taro Cream */
+    --border: #f0e0cd;
+    --shadow-sm: 0 4px 14px rgba(31, 20, 18, 0.08);
+    --shadow-md: 0 12px 30px rgba(31, 20, 18, 0.16);
     --radius: 18px;
   }
 
@@ -400,10 +402,10 @@
     <span class="section-note">💡 Tersedia 3 ukuran kemasan: Small 50gr, Sedang 100gr, Jumbo 200gr</span>
 
     <!-- VARIAN PEDAS (CHILI) -->
-    <div class="flavor-title"><span class="dot" style="background:var(--primary);"></span>🌶️ Varian Pedas (Chili)</div>
+    <div class="flavor-title" style="color:var(--primary); border-left:4px solid var(--primary); padding-left:10px;"><span class="dot" style="background:var(--primary);"></span>🌶️ Varian Pedas (Chili)</div>
     <div class="service-grid">
-      <div class="service-card">
-        <div class="service-img-box">
+      <div class="service-card" style="border-top: 3px solid var(--primary);">
+        <div class="service-img-box" style="background: linear-gradient(145deg, #3d0c0a 0%, #1a0403 100%); border-bottom-color: var(--primary);">
           <img loading="lazy" src="assets/aparsi-chili-main.png" alt="Aparsi Keripik Mbote Chili Small" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="img-fallback" style="display:flex; background:linear-gradient(135deg,#fee2e2,#fca5a5);">🌶️</div>
         </div>
@@ -422,8 +424,8 @@
         </div>
       </div>
 
-      <div class="service-card">
-        <div class="service-img-box">
+      <div class="service-card" style="border-top: 3px solid var(--primary);">
+        <div class="service-img-box" style="background: linear-gradient(145deg, #3d0c0a 0%, #1a0403 100%); border-bottom-color: var(--primary);">
           <img loading="lazy" src="assets/aparsi-chili-main.png" alt="Aparsi Keripik Mbote Chili Sedang" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="img-fallback" style="display:flex; background:linear-gradient(135deg,#fecaca,#f87171);">🌶️</div>
         </div>
@@ -442,8 +444,8 @@
         </div>
       </div>
 
-      <div class="service-card">
-        <div class="service-img-box">
+      <div class="service-card" style="border-top: 3px solid var(--primary);">
+        <div class="service-img-box" style="background: linear-gradient(145deg, #3d0c0a 0%, #1a0403 100%); border-bottom-color: var(--primary);">
           <img loading="lazy" src="assets/aparsi-chili-main.png" alt="Aparsi Keripik Mbote Chili Jumbo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="img-fallback" style="display:flex; background:linear-gradient(135deg,#fca5a5,#ef4444);">🌶️</div>
         </div>
@@ -464,10 +466,10 @@
     </div>
 
     <!-- VARIAN ASIN (SALT) -->
-    <div class="flavor-title"><span class="dot" style="background:var(--secondary);"></span>🧂 Varian Asin (Salt)</div>
+    <div class="flavor-title" style="color:var(--accent-green-dark); border-left:4px solid var(--accent-green); padding-left:10px;"><span class="dot" style="background:var(--accent-green);"></span>🧂 Varian Asin (Salt)</div>
     <div class="service-grid">
-      <div class="service-card">
-        <div class="service-img-box">
+      <div class="service-card" style="border-top: 3px solid var(--accent-green);">
+        <div class="service-img-box" style="background: linear-gradient(145deg, #24330d 0%, #101a04 100%); border-bottom-color: var(--accent-green);">
           <img loading="lazy" src="assets/aparsi-salt-main.png" alt="Aparsi Keripik Mbote Salt Small" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="img-fallback" style="display:flex; background:linear-gradient(135deg,#fef3c7,#fde68a);">🧂</div>
         </div>
@@ -486,8 +488,8 @@
         </div>
       </div>
 
-      <div class="service-card">
-        <div class="service-img-box">
+      <div class="service-card" style="border-top: 3px solid var(--accent-green);">
+        <div class="service-img-box" style="background: linear-gradient(145deg, #24330d 0%, #101a04 100%); border-bottom-color: var(--accent-green);">
           <img loading="lazy" src="assets/aparsi-salt-main.png" alt="Aparsi Keripik Mbote Salt Sedang" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="img-fallback" style="display:flex; background:linear-gradient(135deg,#fde68a,#fbbf24);">🧂</div>
         </div>
@@ -506,8 +508,8 @@
         </div>
       </div>
 
-      <div class="service-card">
-        <div class="service-img-box">
+      <div class="service-card" style="border-top: 3px solid var(--accent-green);">
+        <div class="service-img-box" style="background: linear-gradient(145deg, #24330d 0%, #101a04 100%); border-bottom-color: var(--accent-green);">
           <img loading="lazy" src="assets/aparsi-salt-main.png" alt="Aparsi Keripik Mbote Salt Jumbo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="img-fallback" style="display:flex; background:linear-gradient(135deg,#fbbf24,#f59e0b);">🧂</div>
         </div>
