@@ -195,6 +195,178 @@
     background: var(--secondary); color: #1c1210; border-color: var(--secondary);
   }
 
+  /* 2-CARD PRODUCT LAYOUT WITH SIZE SWITCHER */
+  .product-grid-v2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin-top: 24px;
+  }
+  .product-card-v2 {
+    background: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-card-v2:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+  }
+  .product-img-box-v2 {
+    height: 280px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    overflow: hidden;
+  }
+  .product-img-box-v2 img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 24px rgba(0,0,0,0.3));
+    transition: transform 0.35s ease;
+  }
+  .product-card-v2:hover .product-img-box-v2 img {
+    transform: scale(1.06);
+  }
+  .badge-flavor {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 5px 14px;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    letter-spacing: 0.5px;
+  }
+  .product-info-v2 {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+  }
+  .product-title-v2 {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+  .product-desc-v2 {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .size-picker-label {
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+  .size-pills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  .pill-btn {
+    background: #fffaf3;
+    border: 2px solid #f0e0cd;
+    border-radius: 14px;
+    padding: 10px 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  .pill-btn:hover {
+    border-color: var(--secondary);
+    background: #fffef8;
+  }
+  .pill-btn.active {
+    border-color: var(--primary) !important;
+    background: #fff0f0 !important;
+    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.2);
+  }
+  .pill-btn.active-salt {
+    border-color: var(--accent-green-dark) !important;
+    background: #f4fce8 !important;
+    box-shadow: 0 4px 14px rgba(128, 181, 30, 0.25);
+  }
+  .pill-name {
+    font-weight: 800;
+    font-size: 0.88rem;
+    color: var(--text-main);
+  }
+  .pill-gram {
+    font-size: 0.73rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+  .pill-price {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-top: 2px;
+  }
+  .pill-btn.active-salt .pill-price {
+    color: var(--accent-green-dark);
+  }
+  .product-action-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--border);
+  }
+  .selected-price-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .price-lbl {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .price-val {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--dark);
+  }
+  .btn-add-main {
+    color: #fff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-add-main:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  }
+  .btn-add-main:active {
+    transform: scale(0.96);
+  }
+
   /* CART DRAWER SLIDE-OUT */
   .overlay {
     position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -402,129 +574,87 @@
     </div>
     <span class="section-note">💡 Tersedia 3 ukuran kemasan: Small 50gr, Sedang 100gr, Jumbo 200gr</span>
 
-    <!-- VARIAN PEDAS (CHILI) — dari RAW PHOTO MEDIA/aparsi/4.jpg -->
-    <div class="flavor-title" style="color:var(--primary); border-left:4px solid var(--primary); padding-left:10px;"><span class="dot" style="background:var(--primary);"></span>🌶️ Varian Pedas (Chili)</div>
-    <div class="service-grid">
-      <div class="service-card" style="border-top: 3px solid var(--primary);">
-        <div class="service-img-box" style="background: #a81717; border-bottom-color: var(--primary);">
-          <img loading="lazy" src="assets/chili-pouch-v3.jpg?v=35" alt="Aparsi Keripik Mbote Chili Small" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="img-fallback" style="display:flex; background:linear-gradient(135deg,#fee2e2,#fca5a5);">🌶️</div>
+    <div class="product-grid-v2">
+      <!-- CARD 1: VARIAN PEDAS (CHILI) -->
+      <div class="product-card-v2" style="border-top: 4px solid var(--primary);">
+        <div class="product-img-box-v2" style="background: #a81717;">
+          <img loading="lazy" src="assets/chili-pouch-v3.jpg?v=35" alt="Aparsi Keripik Mbote Chili (Pedas)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="img-fallback" style="display:none; background:linear-gradient(135deg,#fee2e2,#fca5a5);">🌶️</div>
+          <span class="badge-flavor" style="background: var(--primary);">🌶️ Varian Pedas</span>
         </div>
-        <div class="service-card-content">
+        <div class="product-info-v2">
           <div>
-            <div class="service-title">Aparsi Chili — Small (50gr)</div>
-            <div class="service-desc">Keripik mbote pedas gurih, kemasan pas untuk cemilan sendiri.</div>
-          </div>
-          <div>
-            <div class="service-meta">
-              <span class="service-price">Rp 6.000</span>
-              <span class="service-unit">50 gram</span>
+            <h3 class="product-title-v2">Aparsi Chili (Pedas)</h3>
+            <p class="product-desc-v2">Keripik mbote pedas gurih nagih, rempah cabai alami dipadu resep rahasia Ciharsuy yang nikmat.</p>
+            
+            <div class="size-picker-label">Pilih Ukuran Kemasan:</div>
+            <div class="size-pills">
+              <button class="pill-btn active" onclick="selectSize('chili', 'c1', 'Aparsi Chili - Small (50gr)', 6000, '50 gram', this)">
+                <span class="pill-name">Small</span>
+                <span class="pill-gram">50 gram</span>
+                <span class="pill-price">Rp 6.000</span>
+              </button>
+              <button class="pill-btn" onclick="selectSize('chili', 'c2', 'Aparsi Chili - Sedang (100gr)', 11000, '100 gram', this)">
+                <span class="pill-name">Sedang</span>
+                <span class="pill-gram">100 gram</span>
+                <span class="pill-price">Rp 11.000</span>
+              </button>
+              <button class="pill-btn" onclick="selectSize('chili', 'c3', 'Aparsi Chili - Jumbo (200gr)', 22000, '200 gram', this)">
+                <span class="pill-name">Jumbo</span>
+                <span class="pill-gram">200 gram</span>
+                <span class="pill-price">Rp 22.000</span>
+              </button>
             </div>
-            <button class="btn-select-service" onclick="addToCart('c1', 'Aparsi Chili - Small (50gr)', 6000, 'pcs')">+ Tambah ke Keranjang</button>
+          </div>
+
+          <div class="product-action-row">
+            <div class="selected-price-box">
+              <span class="price-lbl">Harga:</span>
+              <span class="price-val" id="price-chili">Rp 6.000</span>
+            </div>
+            <button class="btn-add-main" style="background: linear-gradient(135deg, var(--primary), var(--primary-dark));" onclick="addSelectedToCart('chili')">+ Tambah ke Keranjang</button>
           </div>
         </div>
       </div>
 
-      <div class="service-card" style="border-top: 3px solid var(--primary);">
-        <div class="service-img-box" style="background: #a81717; border-bottom-color: var(--primary);">
-          <img loading="lazy" src="assets/chili-pouch-v3.jpg?v=35" alt="Aparsi Keripik Mbote Chili Sedang" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="img-fallback" style="display:flex; background:linear-gradient(135deg,#fecaca,#f87171);">🌶️</div>
+      <!-- CARD 2: VARIAN ASIN (SALT) -->
+      <div class="product-card-v2" style="border-top: 4px solid var(--accent-green);">
+        <div class="product-img-box-v2" style="background: #80b51e;">
+          <img loading="lazy" src="assets/salt-pouch-v3.jpg?v=35" alt="Aparsi Keripik Mbote Salt (Asin)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="img-fallback" style="display:none; background:linear-gradient(135deg,#fef3c7,#fde68a);">🧂</div>
+          <span class="badge-flavor" style="background: var(--accent-green-dark);">🧂 Varian Asin</span>
         </div>
-        <div class="service-card-content">
+        <div class="product-info-v2">
           <div>
-            <div class="service-title">Aparsi Chili — Sedang (100gr)</div>
-            <div class="service-desc">Ukuran pas untuk berbagi bersama teman atau keluarga di rumah.</div>
-          </div>
-          <div>
-            <div class="service-meta">
-              <span class="service-price">Rp 11.000</span>
-              <span class="service-unit">100 gram</span>
+            <h3 class="product-title-v2">Aparsi Salt (Asin)</h3>
+            <p class="product-desc-v2">Keripik mbote asin gurih klasik renyah alami tanpa pengawet, pas banget untuk cemilan sehari-hari.</p>
+            
+            <div class="size-picker-label">Pilih Ukuran Kemasan:</div>
+            <div class="size-pills">
+              <button class="pill-btn active-salt" onclick="selectSize('salt', 's1', 'Aparsi Salt - Small (50gr)', 6000, '50 gram', this)">
+                <span class="pill-name">Small</span>
+                <span class="pill-gram">50 gram</span>
+                <span class="pill-price">Rp 6.000</span>
+              </button>
+              <button class="pill-btn" onclick="selectSize('salt', 's2', 'Aparsi Salt - Sedang (100gr)', 11000, '100 gram', this)">
+                <span class="pill-name">Sedang</span>
+                <span class="pill-gram">100 gram</span>
+                <span class="pill-price">Rp 11.000</span>
+              </button>
+              <button class="pill-btn" onclick="selectSize('salt', 's3', 'Aparsi Salt - Jumbo (200gr)', 22000, '200 gram', this)">
+                <span class="pill-name">Jumbo</span>
+                <span class="pill-gram">200 gram</span>
+                <span class="pill-price">Rp 22.000</span>
+              </button>
             </div>
-            <button class="btn-select-service" onclick="addToCart('c2', 'Aparsi Chili - Sedang (100gr)', 11000, 'pcs')">+ Tambah ke Keranjang</button>
           </div>
-        </div>
-      </div>
 
-      <div class="service-card" style="border-top: 3px solid var(--primary);">
-        <div class="service-img-box" style="background: #a81717; border-bottom-color: var(--primary);">
-          <img loading="lazy" src="assets/chili-pouch-v3.jpg?v=35" alt="Aparsi Keripik Mbote Chili Jumbo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="img-fallback" style="display:flex; background:linear-gradient(135deg,#fca5a5,#ef4444);">🌶️</div>
-        </div>
-        <div class="service-card-content">
-          <div>
-            <div class="service-title">Aparsi Chili — Jumbo (200gr)</div>
-            <div class="service-desc">Paket hemat ukuran besar, puas ngemil tanpa takut kehabisan.</div>
-          </div>
-          <div>
-            <div class="service-meta">
-              <span class="service-price">Rp 22.000</span>
-              <span class="service-unit">200 gram</span>
+          <div class="product-action-row">
+            <div class="selected-price-box">
+              <span class="price-lbl">Harga:</span>
+              <span class="price-val" id="price-salt">Rp 6.000</span>
             </div>
-            <button class="btn-select-service" onclick="addToCart('c3', 'Aparsi Chili - Jumbo (200gr)', 22000, 'pcs')">+ Tambah ke Keranjang</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- VARIAN ASIN (SALT) — dari RAW PHOTO MEDIA/aparsi/6.jpg -->
-    <div class="flavor-title" style="color:var(--accent-green-dark); border-left:4px solid var(--accent-green); padding-left:10px;"><span class="dot" style="background:var(--accent-green);"></span>🧂 Varian Asin (Salt)</div>
-    <div class="service-grid">
-      <div class="service-card" style="border-top: 3px solid var(--accent-green);">
-        <div class="service-img-box" style="background: #80b51e; border-bottom-color: var(--accent-green);">
-          <img loading="lazy" src="assets/salt-pouch-v3.jpg?v=35" alt="Aparsi Keripik Mbote Salt Small" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="img-fallback" style="display:flex; background:linear-gradient(135deg,#fef3c7,#fde68a);">🧂</div>
-        </div>
-        <div class="service-card-content">
-          <div>
-            <div class="service-title">Aparsi Salt — Small (50gr)</div>
-            <div class="service-desc">Keripik mbote asin gurih klasik, renyah tahan lama.</div>
-          </div>
-          <div>
-            <div class="service-meta">
-              <span class="service-price">Rp 6.000</span>
-              <span class="service-unit">50 gram</span>
-            </div>
-            <button class="btn-select-service" onclick="addToCart('s1', 'Aparsi Salt - Small (50gr)', 6000, 'pcs')">+ Tambah ke Keranjang</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card" style="border-top: 3px solid var(--accent-green);">
-        <div class="service-img-box" style="background: #80b51e; border-bottom-color: var(--accent-green);">
-          <img loading="lazy" src="assets/salt-pouch-v3.jpg?v=35" alt="Aparsi Keripik Mbote Salt Sedang" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="img-fallback" style="display:flex; background:linear-gradient(135deg,#fde68a,#fbbf24);">🧂</div>
-        </div>
-        <div class="service-card-content">
-          <div>
-            <div class="service-title">Aparsi Salt — Sedang (100gr)</div>
-            <div class="service-desc">Cocok untuk stok cemilan mingguan di rumah atau kantor.</div>
-          </div>
-          <div>
-            <div class="service-meta">
-              <span class="service-price">Rp 11.000</span>
-              <span class="service-unit">100 gram</span>
-            </div>
-            <button class="btn-select-service" onclick="addToCart('s2', 'Aparsi Salt - Sedang (100gr)', 11000, 'pcs')">+ Tambah ke Keranjang</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card" style="border-top: 3px solid var(--accent-green);">
-        <div class="service-img-box" style="background: #80b51e; border-bottom-color: var(--accent-green);">
-          <img loading="lazy" src="assets/salt-pouch-v3.jpg?v=35" alt="Aparsi Keripik Mbote Salt Jumbo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="img-fallback" style="display:flex; background:linear-gradient(135deg,#fbbf24,#f59e0b);">🧂</div>
-        </div>
-        <div class="service-card-content">
-          <div>
-            <div class="service-title">Aparsi Salt — Jumbo (200gr)</div>
-            <div class="service-desc">Paket hemat ukuran besar untuk yang doyan banget ngemil asin.</div>
-          </div>
-          <div>
-            <div class="service-meta">
-              <span class="service-price">Rp 22.000</span>
-              <span class="service-unit">200 gram</span>
-            </div>
-            <button class="btn-select-service" onclick="addToCart('s3', 'Aparsi Salt - Jumbo (200gr)', 22000, 'pcs')">+ Tambah ke Keranjang</button>
+            <button class="btn-add-main" style="background: linear-gradient(135deg, var(--accent-green-dark), #3d630a);" onclick="addSelectedToCart('salt')">+ Tambah ke Keranjang</button>
           </div>
         </div>
       </div>
@@ -691,6 +821,28 @@
 <script>
   const WA_NUMBER = "6283119946023";
   let cart = {};
+
+  const selectedVariants = {
+    chili: { id: 'c1', name: 'Aparsi Chili - Small (50gr)', price: 6000, unit: 'pcs' },
+    salt: { id: 's1', name: 'Aparsi Salt - Small (50gr)', price: 6000, unit: 'pcs' }
+  };
+
+  function selectSize(flavor, id, name, price, gramStr, btnEl) {
+    selectedVariants[flavor] = { id, name, price, unit: 'pcs' };
+    
+    const container = btnEl.parentElement;
+    container.querySelectorAll('.pill-btn').forEach(b => {
+      b.classList.remove('active', 'active-salt');
+    });
+    btnEl.classList.add(flavor === 'salt' ? 'active-salt' : 'active');
+
+    document.getElementById('price-' + flavor).innerText = `Rp ${price.toLocaleString('id-ID')}`;
+  }
+
+  function addSelectedToCart(flavor) {
+    const item = selectedVariants[flavor];
+    addToCart(item.id, item.name, item.price, item.unit);
+  }
 
   function addToCart(id, name, price, unit) {
     if (cart[id]) {
