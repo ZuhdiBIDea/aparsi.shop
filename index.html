@@ -769,7 +769,7 @@
 
         <div class="form-group-cart">
           <label>Nama Pemesan:</label>
-          <input type="text" class="cart-input" id="cartName" placeholder="Contoh: Bu Rina" required>
+          <input type="text" class="cart-input" id="cartName" placeholder="Contoh: Bu Rina">
         </div>
 
         <div class="form-group-cart">
@@ -829,17 +829,16 @@
       return;
     }
 
-    const name = document.getElementById("cartName").value;
-    const method = document.getElementById("cartMethod").value;
-    const address = document.getElementById("cartAddress").value;
+    const nameInput = document.getElementById("cartName").value.trim();
+    const methodInput = document.getElementById("cartMethod").value;
+    const addressInput = document.getElementById("cartAddress").value.trim();
 
-    if (!name) {
-      alert("Silakan isi Nama Pemesan!");
-      return;
-    }
+    const nameVal = nameInput ? nameInput : "(belum diisi)";
+    const methodVal = methodInput ? methodInput : "(belum diisi)";
+    const addressVal = addressInput ? addressInput : "(belum diisi)";
 
     let text = `*PESANAN BARU - APARSI KERIPIK MBOTE*\n\n`;
-    text += `Nama: *${name}*\n\n`;
+    text += `Nama: *${nameVal}*\n\n`;
     text += `*DAFTAR PESANAN:*\n`;
 
     let totalPrice = 0;
@@ -851,8 +850,8 @@
     });
 
     text += `\n*DETAIL PENGAMBILAN:*\n`;
-    text += `• Metode: *${method}*\n`;
-    if (address) text += `• Alamat: *${address}*\n`;
+    text += `• Metode: *${methodVal}*\n`;
+    text += `• Alamat: *${addressVal}*\n`;
     text += `----------------------------------\n`;
     text += `*TOTAL BELANJA:* Rp ${totalPrice.toLocaleString('id-ID')}\n\n`;
     text += `Apakah pesanan ini bisa diproses? Terima kasih! 😊`;
